@@ -10,7 +10,6 @@ class tester {
   std::vector<double> sizesOfCashes = {0.25, 1, 6 };
   std::vector<double> sizesOfBufs;
   std::vector<double> durationsOfTest;
-  int vault;
 
  public:
   void straightTest();

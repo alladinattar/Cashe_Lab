@@ -11,7 +11,7 @@
 void tester::straightTest() {
   varOfTest = "direction";
   durationsOfTest.clear();
-
+  int vault
   for (const double& size : sizesOfBufs) {
     int* arr1 = new int[static_cast<int>(size / 4.0)];
     for (int i = 0; i < size / 4.0; i += 16) {
@@ -35,6 +35,7 @@ void tester::revertTest() {
   varOfTest = "reverse";
   durationsOfTest.clear();
 
+  int vault
 
   for (const double& size : sizesOfBufs) {
     int* arr1 = new int[static_cast<int>(size / 4.0)];
@@ -59,6 +60,8 @@ void tester::revertTest() {
 void tester::randomTest() {
   varOfTest = "random";
   durationsOfTest.clear();
+  int vault
+
   for (const double& size : sizesOfBufs) {
     int* arr1 = new int[static_cast<int>(size / 4.0)];
     std::vector<int> indexesOfBlocks;
