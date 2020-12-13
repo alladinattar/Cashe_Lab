@@ -1,15 +1,16 @@
 // Copyright 2020 Your Name <your_email>
 
 #include <gtest/gtest.h>
-#include "testerCashes.hpp"
+
 #include "iostream"
+#include "testerCashes.hpp"
 TEST(Example, EmptyTest) {
   tester test;
   test.setBufs();
   test.revertTest();
-  std::cout<<test.getInvestigation();
+  std::cout << test.getInvestigation();
   test.straightTest();
-  std::cout<<test.getInvestigation();
+  std::cout << test.getInvestigation();
   test.randomTest();
-  std::cout<<test.getInvestigation();
+  std::cout << test.getInvestigation();
 }

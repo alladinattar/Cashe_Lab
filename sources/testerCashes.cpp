@@ -1,5 +1,5 @@
 //
-// Created by rinat on 12/12/20.
+// Copyright 2020 Rinat <rinatmuka4@gmail.com>
 //
 
 #include "testerCashes.hpp"
@@ -7,7 +7,6 @@
 #include "algorithm"
 #include "random"
 #include "sstream"
-std::string tester::getVarOfTest() { return varOfTest; }
 
 void tester::straightTest() {
   varOfTest = "direction";
@@ -25,7 +24,9 @@ void tester::straightTest() {
       }
     }
     auto endTime = std::chrono::steady_clock::now();
-    durationsOfTest.push_back(std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count());
+    durationsOfTest.push_back(
+        std::chrono::duration_cast<std::chrono::milliseconds>
+            (endTime - startTime).count());
     delete[] arr1;
   }
 }
@@ -48,7 +49,9 @@ void tester::revertTest() {
     }
     auto endTime = std::chrono::steady_clock::now();
 
-    durationsOfTest.push_back(std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count());
+    durationsOfTest.push_back(
+        std::chrono::duration_cast<std::chrono::milliseconds>
+            (endTime - startTime).count());
     delete[] arr1;
   }
 }
@@ -73,7 +76,9 @@ void tester::randomTest() {
       }
     }
     auto endTime = std::chrono::steady_clock::now();
-    durationsOfTest.push_back(std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count());
+    durationsOfTest.push_back(
+        std::chrono::duration_cast<std::chrono::milliseconds>
+            (endTime - startTime).count());
     delete[] arr1;
   }
 }

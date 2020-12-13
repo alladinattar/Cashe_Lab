@@ -1,3 +1,6 @@
+// Copyright 2020 Rinat <rinatmuka4@gmail.com>
+#ifndef INCLUDE_TESTERCASHES_HPP_
+#define INCLUDE_TESTERCASHES_HPP_
 #include "string"
 #include "vector"
 class tester {
@@ -13,9 +16,9 @@ class tester {
   void straightTest();
   void randomTest();
   void revertTest();
-  std::string getVarOfTest();
   void setBufs();
 
   std::stringstream getExp(int indexOfBuf);
   std::string getInvestigation();
 };
+#endif  // INCLUDE_TESTERCASHES_HPP_
