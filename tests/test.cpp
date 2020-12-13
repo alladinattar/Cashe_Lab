@@ -7,9 +7,9 @@
 TEST(Example, EmptyTest) {
   tester test;
   test.setBufs();
-  test.revertTest();
-  std::cout << test.getInvestigation();
   test.straightTest();
+  std::cout << test.getInvestigation();
+  test.revertTest();
   std::cout << test.getInvestigation();
   test.randomTest();
   std::cout << test.getInvestigation();

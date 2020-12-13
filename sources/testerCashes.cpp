@@ -25,8 +25,8 @@ void tester::straightTest() {
         }
         auto endTime = std::chrono::steady_clock::now();
         durationsOfTest.push_back(
-                std::chrono::duration_cast<std::chrono::milliseconds>
-                        (endTime - startTime).count());
+                std::chrono::duration_cast<std::chrono::microseconds>
+                        (endTime - startTime).count()/1000);
         delete[] arr1;
     }
 }
@@ -51,8 +51,8 @@ void tester::revertTest() {
         auto endTime = std::chrono::steady_clock::now();
 
         durationsOfTest.push_back(
-                std::chrono::duration_cast<std::chrono::milliseconds>
-                        (endTime - startTime).count());
+                std::chrono::duration_cast<std::chrono::microseconds>
+                        (endTime - startTime).count()/1000);
         delete[] arr1;
     }
 }
@@ -80,8 +80,8 @@ void tester::randomTest() {
         }
         auto endTime = std::chrono::steady_clock::now();
         durationsOfTest.push_back(
-                std::chrono::duration_cast<std::chrono::milliseconds>
-                        (endTime - startTime).count());
+                std::chrono::duration_cast<std::chrono::microseconds>
+                        (endTime - startTime).count()/1000);
         delete[] arr1;
     }
 }
