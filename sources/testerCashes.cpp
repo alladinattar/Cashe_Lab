@@ -39,12 +39,12 @@ void tester::revertTest() {
 
     for (const double &size : sizesOfBufs) {
         int *arr1 = new int[static_cast<int>(size / 4.0)];
-        for (int i = size / 4.0; i > 0; i -= 16) {
+        for (int i = size / 4.0-1; i > 0; i -= 16) {
             vault = arr1[i];
         }
         auto startTime = std::chrono::steady_clock::now();
         for (int i = 0; i < 1000; ++i) {
-            for (int j = size / 4.0; j > 0; j -= 16) {
+            for (int j = size / 4.0-1; j > 0; j -= 16) {
                 vault = arr1[j];
             }
         }
