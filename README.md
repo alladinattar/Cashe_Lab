@@ -159,7 +159,7 @@ investigation:                                       |  investigation:
 
 ```
 
-
+```
 investigation:
 	travel_variant:direction
 	- experiment:
@@ -276,6 +276,7 @@ investigation:
 			buffer_size: 9216Kb
 		results:
 			duration: 12378ms
+```
 
 ### Рекомендации
 
