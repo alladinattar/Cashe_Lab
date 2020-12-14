@@ -154,7 +154,128 @@ investigation:                                       |  investigaion:
                                                      |
 investigation:                                       |  investigation:
 ...                                                  |  ...
+
+
+
 ```
+
+
+investigation:
+	travel_variant:direction
+	- experiment:
+		number: 1
+		input_data:
+			buffer_size: 128Kb
+		results:
+			duration: 18ms
+	- experiment:
+		number: 2
+		input_data:
+			buffer_size: 1024Kb
+		results:
+			duration: 87ms
+	- experiment:
+		number: 3
+		input_data:
+			buffer_size: 2048Kb
+		results:
+			duration: 241ms
+	- experiment:
+		number: 4
+		input_data:
+			buffer_size: 4096Kb
+		results:
+			duration: 388ms
+	- experiment:
+		number: 5
+		input_data:
+			buffer_size: 8192Kb
+		results:
+			duration: 833ms
+	- experiment:
+		number: 6
+		input_data:
+			buffer_size: 9216Kb
+		results:
+			duration: 1195ms
+
+investigation:
+	travel_variant:reverse
+	- experiment:
+		number: 1
+		input_data:
+			buffer_size: 128Kb
+		results:
+			duration: 9ms
+	- experiment:
+		number: 2
+		input_data:
+			buffer_size: 1024Kb
+		results:
+			duration: 68ms
+	- experiment:
+		number: 3
+		input_data:
+			buffer_size: 2048Kb
+		results:
+			duration: 457ms
+	- experiment:
+		number: 4
+		input_data:
+			buffer_size: 4096Kb
+		results:
+			duration: 782ms
+	- experiment:
+		number: 5
+		input_data:
+			buffer_size: 8192Kb
+		results:
+			duration: 1841ms
+	- experiment:
+		number: 6
+		input_data:
+			buffer_size: 9216Kb
+		results:
+			duration: 1802ms
+
+investigation:
+	travel_variant:random
+	- experiment:
+		number: 1
+		input_data:
+			buffer_size: 128Kb
+		results:
+			duration: 114ms
+	- experiment:
+		number: 2
+		input_data:
+			buffer_size: 1024Kb
+		results:
+			duration: 1545ms
+	- experiment:
+		number: 3
+		input_data:
+			buffer_size: 2048Kb
+		results:
+			duration: 3225ms
+	- experiment:
+		number: 4
+		input_data:
+			buffer_size: 4096Kb
+		results:
+			duration: 5776ms
+	- experiment:
+		number: 5
+		input_data:
+			buffer_size: 8192Kb
+		results:
+			duration: 13008ms
+	- experiment:
+		number: 6
+		input_data:
+			buffer_size: 9216Kb
+		results:
+			duration: 12378ms
 
 ### Рекомендации
 
