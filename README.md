@@ -1,6 +1,6 @@
 # Лабораторная работа №2
 Диаграмма, построенная по полученным значениям 
-![](Screenshot_3.png)
+![](Screenshot_2.png)
 В большинстве современных ПК используется следующая иерархия памяти:
 | Тип | Скорость доступа | Размер |
 | - | - | - |
@@ -142,37 +142,37 @@ investigation:
 		input_data:
 			buffer_size: 128Kb
 		results:
-			duration: 18ms
+			duration: 3mcs
 	- experiment:
 		number: 2
 		input_data:
 			buffer_size: 1024Kb
 		results:
-			duration: 87ms
+			duration: 71mcs
 	- experiment:
 		number: 3
 		input_data:
 			buffer_size: 2048Kb
 		results:
-			duration: 241ms
+			duration: 107mcs
 	- experiment:
 		number: 4
 		input_data:
 			buffer_size: 4096Kb
 		results:
-			duration: 388ms
+			duration: 310mcs
 	- experiment:
 		number: 5
 		input_data:
 			buffer_size: 8192Kb
 		results:
-			duration: 833ms
+			duration: 563mcs
 	- experiment:
 		number: 6
 		input_data:
 			buffer_size: 9216Kb
 		results:
-			duration: 1195ms
+			duration: 419mcs
 
 investigation:
 	travel_variant:reverse
@@ -181,37 +181,37 @@ investigation:
 		input_data:
 			buffer_size: 128Kb
 		results:
-			duration: 9ms
+			duration: 5mcs
 	- experiment:
 		number: 2
 		input_data:
 			buffer_size: 1024Kb
 		results:
-			duration: 68ms
+			duration: 43mcs
 	- experiment:
 		number: 3
 		input_data:
 			buffer_size: 2048Kb
 		results:
-			duration: 457ms
+			duration: 93mcs
 	- experiment:
 		number: 4
 		input_data:
 			buffer_size: 4096Kb
 		results:
-			duration: 782ms
+			duration: 157mcs
 	- experiment:
 		number: 5
 		input_data:
 			buffer_size: 8192Kb
 		results:
-			duration: 1841ms
+			duration: 330mcs
 	- experiment:
 		number: 6
 		input_data:
 			buffer_size: 9216Kb
 		results:
-			duration: 1802ms
+			duration: 352mcs
 
 investigation:
 	travel_variant:random
@@ -220,37 +220,37 @@ investigation:
 		input_data:
 			buffer_size: 128Kb
 		results:
-			duration: 114ms
+			duration: 20mcs
 	- experiment:
 		number: 2
 		input_data:
 			buffer_size: 1024Kb
 		results:
-			duration: 1545ms
+			duration: 195mcs
 	- experiment:
 		number: 3
 		input_data:
 			buffer_size: 2048Kb
 		results:
-			duration: 3225ms
+			duration: 761mcs
 	- experiment:
 		number: 4
 		input_data:
 			buffer_size: 4096Kb
 		results:
-			duration: 5776ms
+			duration: 1106mcs
 	- experiment:
 		number: 5
 		input_data:
 			buffer_size: 8192Kb
 		results:
-			duration: 13008ms
+			duration: 1903mcs
 	- experiment:
 		number: 6
 		input_data:
 			buffer_size: 9216Kb
 		results:
-			duration: 12378ms
+			duration: 2520mcs
 ```
 
 ### Рекомендации
