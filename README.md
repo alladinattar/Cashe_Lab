@@ -134,13 +134,6 @@ cache_size['3'] = 8 mb;
 ### Результаты
 
 Ниже представлен формат и пример отчета:
-
-                                   |  ...
-
-
-
-```
-
 ```
 investigation:
 	travel_variant:direction
