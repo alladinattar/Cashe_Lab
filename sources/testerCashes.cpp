@@ -122,7 +122,8 @@ std::string tester::getVarOfTest() {
 size_t tester::getSizeOfBufArr() {return sizesOfBufs.size();}
 
 std::ostream & operator << (std::ostream & out, tester & invest){
-    out << "investigation:\n" << "\ttravel_variant: " << invest.getVarOfTest() << "\n";
+    out << "investigation:\n" << "\ttravel_variant: "
+    << invest.getVarOfTest() << "\n";
     for (size_t i = 0; i < invest.getSizeOfBufArr(); ++i)
         out << invest.getExp(i).str();
     out << "\n";
