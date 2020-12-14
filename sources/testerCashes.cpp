@@ -8,25 +8,31 @@
 #include "random"
 #include "sstream"
 
+
+const int kylo1024 = 1024;
+const int kylo1000 = 1000;
+const double four = 4.;
+const int sixteen = 16;
+
 void tester::straightTest() {
     varOfTest = "direction";
     durationsOfTest.clear();
     [[maybe_unused]] int vault;
     for (const double &size : sizesOfBufs) {
-        int *arr1 = new int[static_cast<int>(size / 4.0)];
-        for (int i = 0; i < size / 4.0; i += 16) {
+        int *arr1 = new int[static_cast<int>(size / four)];
+        for (int i = 0; i < size / four; i += sixteen) {
             vault = arr1[i];
         }
         auto startTime = std::chrono::steady_clock::now();
-        for (int item = 0; item < 1000; ++item) {
-            for (int i = 0; i < size / 4.0; i += 16) {
+        for (int item = 0; item < kylo1000; ++item) {
+            for (int i = 0; i < size / four; i += sixteen) {
                 vault = arr1[i];
             }
         }
         auto endTime = std::chrono::steady_clock::now();
         durationsOfTest.push_back(
                 std::chrono::duration_cast<std::chrono::microseconds>
-                        (endTime - startTime).count()/1000);
+                        (endTime - startTime).count()/kylo1000);
         delete[] arr1;
     }
 }
@@ -38,13 +44,13 @@ void tester::revertTest() {
     [[maybe_unused]] int vault;
 
     for (const double &size : sizesOfBufs) {
-        int *arr1 = new int[static_cast<int>(size / 4.0)];
-        for (int i = size / 4.0-1; i > 0; i -= 16) {
+        int *arr1 = new int[static_cast<int>(size / four)];
+        for (int i = size / four-1; i > 0; i -= sixteen) {
             vault = arr1[i];
         }
         auto startTime = std::chrono::steady_clock::now();
-        for (int i = 0; i < 1000; ++i) {
-            for (int j = size / 4.0-1; j > 0; j -= 16) {
+        for (int i = 0; i < kylo1000; ++i) {
+            for (int j = size / four-1; j > 0; j -= sixteen) {
                 vault = arr1[j];
             }
         }
@@ -52,7 +58,7 @@ void tester::revertTest() {
 
         durationsOfTest.push_back(
                 std::chrono::duration_cast<std::chrono::microseconds>
-                        (endTime - startTime).count()/1000);
+                        (endTime - startTime).count()/kylo1000);
         delete[] arr1;
     }
 }
@@ -63,9 +69,9 @@ void tester::randomTest() {
     [[maybe_unused]]int vault;
 
     for (const double &size : sizesOfBufs) {
-        int *arr1 = new int[static_cast<int>(size / 4.0)];
+        int *arr1 = new int[static_cast<int>(size / four)];
         std::vector<int> indexesOfBlocks;
-        for (int j = 0; j < size / 4.0; j += 16) {
+        for (int j = 0; j < size / four; j += sixteen) {
             indexesOfBlocks.push_back(j);
             vault = arr1[j];
         }
@@ -73,7 +79,7 @@ void tester::randomTest() {
         std::shuffle(indexesOfBlocks.begin(), indexesOfBlocks.end(), rng);
 
         auto startTime = std::chrono::steady_clock::now();
-        for (int i = 0; i < 1000; ++i) {
+        for (int i = 0; i < kylo1000; ++i) {
             for (auto index : indexesOfBlocks) {
                 vault = arr1[index];
             }
@@ -81,7 +87,7 @@ void tester::randomTest() {
         auto endTime = std::chrono::steady_clock::now();
         durationsOfTest.push_back(
                 std::chrono::duration_cast<std::chrono::microseconds>
-                        (endTime - startTime).count()/1000);
+                        (endTime - startTime).count()/kylo1000);
         delete[] arr1;
     }
 }
@@ -91,10 +97,10 @@ std::stringstream tester::getExp(int indexOfBuf) {
     ss << "\t- experiment:\n"
        << "\t\tnumber: " << indexOfBuf + 1 << "\n"
        << "\t\tinput_data:\n"
-       << "\t\t\tbuffer_size: " << sizesOfBufs[indexOfBuf] / 1024 << "Kb"
+       << "\t\t\tbuffer_size: " << sizesOfBufs[indexOfBuf] / kylo1024 << "Kb"
        << "\n"
        << "\t\tresults:\n"
-       << "\t\t\tduration: " << durationsOfTest[indexOfBuf] << "ms" << '\n';
+       << "\t\t\tduration: " << durationsOfTest[indexOfBuf] << "mcs" << '\n';
     return ss;
 }
 
@@ -110,9 +116,9 @@ std::string tester::getInvestigation() {
 }
 
 void tester::setBufs() {
-    sizesOfBufs.push_back(sizesOfCashes[0] / 2.0 * 1024 * 1024);
+    sizesOfBufs.push_back(sizesOfCashes[0] / 2.0 * kylo1024 * kylo1024);
     for (int i = 1; i <= 1.5 * sizesOfCashes[2]; i *= 2) {
-        sizesOfBufs.push_back(i * 1024 * 1024);
+        sizesOfBufs.push_back(i * kylo1024 * kylo1024);
     }
-    sizesOfBufs.push_back(sizesOfCashes[2] * 1.5 * 1024 * 1024);
+    sizesOfBufs.push_back(sizesOfCashes[2] * 1.5 * kylo1024 * kylo1024);
 }
