@@ -135,24 +135,122 @@ cache_size['3'] = 8 mb;
 Ниже представлен формат и пример отчета:
 
 ```yaml
-investigation:                                       |  investigaion:
-  travel_variant: <вариант_прохода>                  |    travel_order: "direction"
-  experiments:                                       |    experiments:
-  - experiment:                                      |    - experiment:
-      number:                                        |        number: 1
-      input_data:                                    |        input_data:
-        buffer_size: <размер_буфера>                 |          buffer_size: "1mb"
-      results:                                       |        results:
-        duration: <продолжительность>                |          duration: "1ns"
-  - experiment:                                      |    - experiment:
-      number: <номер_эксперимента>                   |        number: 2
-      input_data:                                    |        input_data:
-        buffer_size: <размер_буфера>                 |          buffer_size: "2mb"
-      results:                                       |        results:
-        duration: <продолжительность>                |          duration: "2ns"
-                                                     |
-investigation:                                       |  investigation:
-...                                                  |  ...
+investigation:
+	travel_variant:direction
+	- experiment:
+		number: 1
+		input_data:
+			buffer_size: 128Kb
+		results:
+			duration: 17mcs
+	- experiment:
+		number: 2
+		input_data:
+			buffer_size: 1024Kb
+		results:
+			duration: 128mcs
+	- experiment:
+		number: 3
+		input_data:
+			buffer_size: 2048Kb
+		results:
+			duration: 191mcs
+	- experiment:
+		number: 4
+		input_data:
+			buffer_size: 4096Kb
+		results:
+			duration: 287mcs
+	- experiment:
+		number: 5
+		input_data:
+			buffer_size: 8192Kb
+		results:
+			duration: 519mcs
+	- experiment:
+		number: 6
+		input_data:
+			buffer_size: 9216Kb
+		results:
+			duration: 659mcs
+
+investigation:
+	travel_variant:reverse
+	- experiment:
+		number: 1
+		input_data:
+			buffer_size: 128Kb
+		results:
+			duration: 9mcs
+	- experiment:
+		number: 2
+		input_data:
+			buffer_size: 1024Kb
+		results:
+			duration: 74mcs
+	- experiment:
+		number: 3
+		input_data:
+			buffer_size: 2048Kb
+		results:
+			duration: 169mcs
+	- experiment:
+		number: 4
+		input_data:
+			buffer_size: 4096Kb
+		results:
+			duration: 444mcs
+	- experiment:
+		number: 5
+		input_data:
+			buffer_size: 8192Kb
+		results:
+			duration: 851mcs
+	- experiment:
+		number: 6
+		input_data:
+			buffer_size: 9216Kb
+		results:
+			duration: 956mcs
+
+investigation:
+	travel_variant:random
+	- experiment:
+		number: 1
+		input_data:
+			buffer_size: 128Kb
+		results:
+			duration: 74mcs
+	- experiment:
+		number: 2
+		input_data:
+			buffer_size: 1024Kb
+		results:
+			duration: 633mcs
+	- experiment:
+		number: 3
+		input_data:
+			buffer_size: 2048Kb
+		results:
+			duration: 1751mcs
+	- experiment:
+		number: 4
+		input_data:
+			buffer_size: 4096Kb
+		results:
+			duration: 2973mcs
+	- experiment:
+		number: 5
+		input_data:
+			buffer_size: 8192Kb
+		results:
+			duration: 7009mcs
+	- experiment:
+		number: 6
+		input_data:
+			buffer_size: 9216Kb
+		results:
+			duration: 9753mcs
 ```
 
 ### Рекомендации
