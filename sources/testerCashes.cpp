@@ -115,6 +115,20 @@ std::string tester::getInvestigation() {
     return ss.str();
 }
 
+std::string tester::getVarOfTest() {
+    return varOfTest;
+}
+
+size_t tester::getSizeOfBufArr() {return sizesOfBufs.size();}
+
+std::ostream & operator << (std::ostream & out, tester & invest){
+    out << "investigation:\n" << "\ttravel_variant: " << invest.getVarOfTest() << "\n";
+    for (size_t i = 0; i < invest.getSizeOfBufArr(); ++i)
+        out << invest.getExp(i).str();
+    out << "\n";
+    return out;
+}
+
 void tester::setBufs() {
     sizesOfBufs.push_back(sizesOfCashes[0] / 2.0 * kylo1024 * kylo1024);
     for (int i = 1; i <= 1.5 * sizesOfCashes[2]; i *= 2) {
@@ -122,3 +136,4 @@ void tester::setBufs() {
     }
     sizesOfBufs.push_back(sizesOfCashes[2] * 1.5 * kylo1024 * kylo1024);
 }
+

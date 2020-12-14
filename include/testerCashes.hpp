@@ -16,6 +16,9 @@ class tester {
   void randomTest();
   void revertTest();
   void setBufs();
+  friend std::ostream & operator << (std::ostream & out, tester & a);
+  std::string getVarOfTest();
+  size_t getSizeOfBufArr();
 
   std::stringstream getExp(int indexOfBuf);
   std::string getInvestigation();
